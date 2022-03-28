@@ -1,21 +1,23 @@
 import divisiblePytest
+import pytest
 
-def test_divisible_5():
-    num=5
-    result=divisiblePytest.divisible_5(num)
+@pytest.fixture
+def input():
+    num=10
+    return num
+
+def test_divisible_5(input):
+    result=divisiblePytest.divisible_5(input)
     assert result == True
 
-def test_divisible_7():
-    num=3
-    result=divisiblePytest.divisible_7(num)
+def test_divisible_7(input):
+    result=divisiblePytest.divisible_7(input)
     assert result == False
 
-def test_divisible_9():
-    num=9
-    result=divisiblePytest.divisible_9(num)
+def test_divisible_9(input):
+    result=divisiblePytest.divisible_9(input)
+    assert result == False
+
+def test_divisible_10(input):
+    result=divisiblePytest.divisible_10(input)
     assert result == True
-
-def test_divisible_10():
-    num=8
-    result=divisiblePytest.divisible_10(num)
-    assert result == False
